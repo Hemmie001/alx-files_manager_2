@@ -1,18 +1,15 @@
-//index.js
 import express from 'express';
 import AppController from '../controllers/AppController';
 import UsersController from '../controllers/UsersController';
 import AuthController from '../controllers/AuthController';
 import FilesController from '../controllers/FilesController';
 
-// Create a new router instance
 const router = express.Router();
 
-// This funct. configures routes & attach controllers 2 them
 const routeController = (app) => {
   app.use('/', router);
 
-  // Define routes & attach corresponding controller methods
+  // App Controller
   router.get('/status', (req, res) => {
     AppController.getStatus(req, res);
   });
